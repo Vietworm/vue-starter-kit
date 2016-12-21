@@ -1,6 +1,6 @@
 # vue-starter-kit
 
-> A Vue.js project
+This starter kit is designed to get you up and running with a bunch of awesome new front-end technologies, all on top of a configurable, feature-rich webpack build system that's already setup to provide hot reloading, unit testing, bundle splitting, eslint and more.
 
 ## Recommend Tools
 
