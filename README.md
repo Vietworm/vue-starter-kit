@@ -1,5 +1,8 @@
 # vue-starter-kit
 
+[![Code Climate](https://codeclimate.com/github/Vietworm/vue-starter-kit/badges/gpa.svg)](https://codeclimate.com/github/Vietworm/vue-starter-kit)
+[![Issue Count](https://codeclimate.com/github/Vietworm/vue-starter-kit/badges/issue_count.svg)](https://codeclimate.com/github/Vietworm/vue-starter-kit)
+
 This starter kit is designed to get you up and running with a bunch of awesome new front-end technologies, all on top of a configurable, feature-rich webpack build system that's already setup to provide hot reloading, unit testing, bundle splitting, eslint and more.
 
 ## Recommend Tools
