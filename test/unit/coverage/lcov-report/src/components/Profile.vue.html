@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for src\components\Aboutme.vue</title>
+    <title>Code coverage report for src\components\Profile.vue</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -16,13 +16,13 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../../index.html">all files</a> / <a href="index.html">src/components/</a> Aboutme.vue
+      <a href="../../index.html">all files</a> / <a href="index.html">src/components/</a> Profile.vue
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">75% </span>
+        <span class="strong">15.38% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>3/4</span>
+        <span class='fraction'>2/13</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,18 +30,18 @@
         <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">50% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>1/2</span>
+        <span class='fraction'>0/7</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">66.67% </span>
+        <span class="strong">8.33% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>2/3</span>
+        <span class='fraction'>1/12</span>
       </div>
     </div>
   </div>
-  <div class='status-line medium'></div>
+  <div class='status-line low'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -84,7 +84,26 @@
 39
 40
 41
-42</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -109,12 +128,31 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -145,23 +183,42 @@
 //
 //
 //
+//
 &nbsp;
-export default {
-  name: 'Aboutme',
-  props: {
-    name: {
-      type: String
+export default <span class="fstat-no" title="function not covered" ><span class="fstat-no" title="function not covered" >{</span></span>
+  name: 'profile',
+  data () {
+<span class="cstat-no" title="statement not covered" >    r</span>eturn {
+      msg: 'Welcome to Profile page',
+      loading: false,
+      profile: null,
+      error: null
     }
   },
-  data () {
-    return {
-      msg: 'Aboutme &amp; 100dayproject dream comes true!!',
-      counter: 1
-    }
+  created () {
+<span class="cstat-no" title="statement not covered" >    t</span>his.fetchData()
+  },
+  watch: {
+    '$route': 'fetchData'
   },
   methods: {
-    reverseMessage: <span class="fstat-no" title="function not covered" >function () {</span>
-<span class="cstat-no" title="statement not covered" >      t</span>his.msg = this.msg.split('').reverse().join('')
+    fetchData: <span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >      c</span>onst self = this
+<span class="cstat-no" title="statement not covered" >      t</span>his.error = this.profile = null
+<span class="cstat-no" title="statement not covered" >      t</span>his.loading = true
+<span class="cstat-no" title="statement not covered" >      t</span>his.$http.get('https://api.github.com/users/' + this.$route.params.username).then(<span class="fstat-no" title="function not covered" >function (data) {</span>
+<span class="cstat-no" title="statement not covered" >        s</span>etTimeout(<span class="fstat-no" title="function not covered" >function () {</span>
+<span class="cstat-no" title="statement not covered" >          s</span>elf.profile = data.body
+<span class="cstat-no" title="statement not covered" >          s</span>elf.loading = false
+        }, 1000)
+      }).catch(<span class="fstat-no" title="function not covered" >function (error) {</span>
+<span class="cstat-no" title="statement not covered" >        s</span>elf.error = error
+      })
+    }
+  },
+  filters: {
+    moment: <span class="fstat-no" title="function not covered" >function (date) {</span>
+<span class="cstat-no" title="statement not covered" >      r</span>eturn 'Last update: ' + date
     }
   }
 }

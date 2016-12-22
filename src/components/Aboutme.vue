@@ -1,5 +1,5 @@
 <template xmlns:v-on="http://www.w3.org/1999/xhtml">
-  <div class="Aboutme">
+  <div class="aboutme">
     <h1>{{ msg }}</h1>
     <h2>Ecosystem - Counter: {{ counter }}</h2>
 
