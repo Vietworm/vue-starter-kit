@@ -2,7 +2,7 @@
   <div>
     <ul>
       <li v-for="p in products">
-        {{ p.title }} - {{ p.price }}
+        {{ p.title }} - {{ p.price | currency }}
         <br>
         <button :disabled="!p.inventory" @click="addToCart(p)">Add to Cart</button>
       </li>

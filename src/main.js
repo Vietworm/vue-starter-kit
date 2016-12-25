@@ -9,6 +9,7 @@ import store from './store'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
 import VueLazyLoad from 'vue-lazyload'
+import { currency } from './filters/currency'
 
 const router = new VueRouter({
   history: true,
@@ -22,6 +23,9 @@ const router = new VueRouter({
     {path: '*', component: NotFoundComponent}
   ]
 })
+
+Vue.config.debug = true
+Vue.filter('currency', currency)
 
 Vue.use(VueResource)
 Vue.use(VueRouter)
