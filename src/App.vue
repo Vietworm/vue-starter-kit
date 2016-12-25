@@ -3,6 +3,7 @@
     <img src="./assets/logo.png">
     <ul>
       <li><router-link to="/profile/vietworm">Profile</router-link></li>
+      <li><router-link to="/products">Products</router-link></li>
       <li><router-link to="/contact">Contact</router-link></li>
       <li><router-link to="/about">About</router-link></li>
     </ul>

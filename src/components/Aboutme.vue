@@ -12,9 +12,15 @@
       <br>
       <br>
 
-      <button v-on:click="counter += 1">+1 Counter</button>
-      <button v-on:click="reverseMessage">Reverse Message</button>
+      <button @click="counter += 1">+1 Counter</button>
+      <button @click="reverseMessage">Reverse Message</button>
     </ul>
+
+    <div class="img-list">
+      <div ref="container">
+        <img height="200px" width="200px" v-lazy="img" v-for="img in list" :key="img">
+      </div>
+    </div>
   </div>
 </template>
 
@@ -29,7 +35,9 @@
     data () {
       return {
         msg: 'Aboutme & 100dayproject dream comes true!!',
-        counter: 1
+        counter: 1,
+        list: ['http://hilongjw.github.io/vue-lazyload/dist/test1.jpg', 'http://hilongjw.github.io/vue-lazyload/dist/test2.jpg', 'http://hilongjw.github.io/vue-lazyload/dist/test3.jpg', 'http://hilongjw.github.io/vue-lazyload/dist/test4.jpg', 'http://hilongjw.github.io/vue-lazyload/dist/test5.jpg'
+        ]
       }
     },
     methods: {
