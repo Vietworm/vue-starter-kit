@@ -6,3 +6,4 @@ npm-debug.log
 selenium-debug.log
 /test/e2e/reports/*
 /test/unit/coverage/lcov.info
+/test/unit/coverage/lcov-report/*

@@ -1,5 +1,15 @@
-/**
- * Created by hailp on 12/26/16.
- */
+import Vue from 'vue'
+import VueResource from 'vue-resource'
+import VueLazyLoad from 'vue-lazyload'
 
-"use strict";
+// add filters
+import filter from './filters'
+filter(Vue)
+
+Vue.use(VueResource)
+Vue.use(VueLazyLoad, {
+  preLoad: 1.3,
+  attempt: 1
+})
+
+export default Vue

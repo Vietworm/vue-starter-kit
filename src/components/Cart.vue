@@ -5,6 +5,7 @@
     <ul>
       <li v-for="p in products">
         {{ p.title }} - {{ p.price | currency }} x {{ p.quantity }}
+        <button @click="removeToCart(p)">-</button>
       </li>
     </ul>
     <p>Total: {{ total | currency }}</p>
@@ -19,7 +20,7 @@
 }
 </style>
 <script>
-  import { mapGetters } from 'vuex'
+  import { mapGetters, mapActions } from 'vuex'
 
   export default {
     computed: {
@@ -34,6 +35,7 @@
       }
     },
     methods: {
+      ...mapActions(['removeToCart']),
       checkout (products) {
         this.$store.dispatch('checkout', products)
       }
