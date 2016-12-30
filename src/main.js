@@ -9,7 +9,7 @@ import store from './store'
 import VueRouter from 'vue-router'
 
 const router = new VueRouter({
-  history: true,
+  mode: 'history',
   root: '/',
   routes: [
     {path: '/contact', component: Contact},
