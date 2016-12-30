@@ -1,12 +1,20 @@
 import Vue from './Vue'
 import App from './App'
-import About from './components/Aboutme'
-import Profile from './components/Profile'
-import Contact from './components/Contact'
-import Products from './components/ProductList'
-import NotFoundComponent from './NotFound'
 import store from './store'
 import VueRouter from 'vue-router'
+
+// Component split lazy loading
+const About = resolve => {
+  // require.ensure is Webpack's special syntax for a code-split point.
+  require.ensure(['./components/Aboutme.vue'], () => {
+    resolve(require('./components/Aboutme.vue'))
+  })
+}
+
+const Profile = resolve => require(['./components/Profile.vue'], resolve)
+const Contact = resolve => require(['./components/Contact.vue'], resolve)
+const Products = resolve => require(['./components/ProductList.vue'], resolve)
+const NotFound = resolve => require(['./NotFound.vue'], resolve)
 
 const router = new VueRouter({
   mode: 'history',
@@ -17,7 +25,7 @@ const router = new VueRouter({
     {path: '/profile/:username', component: Profile},
     {path: '/products', component: Products},
     {path: '/', redirect: '/about'},
-    {path: '*', component: NotFoundComponent}
+    {path: '*', component: NotFound}
   ]
 })
 
